@@ -8,6 +8,9 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions: # ✅ ADD THIS
+      contents: write # Required to push commits/tags
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -17,12 +20,12 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Updated to Node 20+
+          node-version: 20 # Ensure using Node.js 20+
 
       - name: Install dependencies
         run: npm install --save-dev semantic-release @semantic-release/changelog @semantic-release/git
 
       - name: Run Semantic Release
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Ensure GitHub token is used
         run: npx semantic-release
