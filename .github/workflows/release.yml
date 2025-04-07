@@ -8,8 +8,12 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    permissions: # ✅ ADD THIS
+    permissions:
       contents: write # Required to push commits/tags
+
+    env: # ✅ Set environment variables here
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      RELEASE_CHANNEL: production
 
     steps:
       - name: Checkout repository
@@ -25,7 +29,8 @@ jobs:
       - name: Install dependencies
         run: npm install --save-dev semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/commit-analyzer @semantic-release/release-notes-generator conventional-changelog-conventionalcommits
 
+      - name: ✅ Log environment variable
+        run: echo "RELEASE_CHANNEL is $RELEASE_CHANNEL"
+
       - name: Run Semantic Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Ensure GitHub token is used
         run: npx semantic-release
