@@ -1,7 +1,6 @@
 {
   "branches": ["main"],
   "preset": "conventionalcommits",
-  "tagFormat": "v${version}",
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
@@ -19,11 +18,8 @@
       }
     ]
   ],
-  "release": {
-    "initialVersion": "2.0.0"
-  },
   "releaseRules": [
-    { "type": "release", "release": "patch" },
+    { "type": "release", "release": "major" },
     { "type": "feat", "release": "minor" },
     { "type": "fix", "release": "patch" }
   ]
