@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/MARK2273/test-version/compare/v1.0.2...v1.0.3) (2025-04-07)
+
+
+### Bug Fixes
+
+* add new feature ([a9c1ea6](https://github.com/MARK2273/test-version/commit/a9c1ea6acc1123c067cfe11aaad2026a88ae3c5a))
+
 ## [1.0.2](https://github.com/MARK2273/test-version/compare/v1.0.1...v1.0.2) (2025-04-07)
 
 
