@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/MARK2273/test-version/compare/v1.0.3...v1.1.0) (2025-04-07)
+
+### Features
+
+* update rules ([921618c](https://github.com/MARK2273/test-version/commit/921618cb846d9a612388853a76e750cd70584ac1))
+
 ## [1.0.3](https://github.com/MARK2273/test-version/compare/v1.0.2...v1.0.3) (2025-04-07)
 
 
