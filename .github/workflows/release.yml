@@ -34,5 +34,5 @@ jobs:
       - name: Run Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RELEASE_CHANNEL: ${{ env.RELEASE_CHANNEL }} # 👈 Pass it explicitly
+          RELEASE_CHANNEL: ${{ secrets.RELEASE_CHANNEL }} # 👈 Pass it explicitly
         run: npx semantic-release
