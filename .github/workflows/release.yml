@@ -17,9 +17,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Load .env file
-        uses: xom9ikk/dotenv@v2 # 👈 This loads your .env values into env vars
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -28,8 +25,10 @@ jobs:
       - name: Install dependencies
         run: npm install --save-dev semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/commit-analyzer @semantic-release/release-notes-generator conventional-changelog-conventionalcommits
 
-      - name: ✅ Log environment variable
+      - name: Log RELEASE_CHANNEL
         run: echo "RELEASE_CHANNEL is $RELEASE_CHANNEL"
+        env:
+          RELEASE_CHANNEL: ${{ secrets.RELEASE_CHANNEL }}
 
       - name: Run Semantic Release
         env:
