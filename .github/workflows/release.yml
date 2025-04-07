@@ -26,9 +26,9 @@ jobs:
         run: npm install --save-dev semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/commit-analyzer @semantic-release/release-notes-generator conventional-changelog-conventionalcommits
 
       - name: Log RELEASE_CHANNEL
-        run: echo "RELEASE_CHANNEL is $RELEASE_CHANNEL"
         env:
           RELEASE_CHANNEL: ${{ secrets.RELEASE_CHANNEL }}
+        run: echo "RELEASE_CHANNEL is $RELEASE_CHANNEL"
 
       - name: Run Semantic Release
         env:
