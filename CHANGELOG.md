@@ -1,3 +1,9 @@
+## [1.2.6](https://github.com/MARK2273/test-version/compare/v1.2.5...v1.2.6) (2025-04-07)
+
+### Bug Fixes
+
+* fix env ([cc809bd](https://github.com/MARK2273/test-version/commit/cc809bd1964873149250b520bd4d18a9873a204a))
+
 ## [1.2.5](https://github.com/MARK2273/test-version/compare/v1.2.4...v1.2.5) (2025-04-07)
 
 ### Bug Fixes
