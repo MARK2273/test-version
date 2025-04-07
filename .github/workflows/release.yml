@@ -3,17 +3,13 @@ name: Release Version
 on:
   push:
     branches:
-      - main # Runs only when merging to main
+      - main
 
 jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Required to push commits/tags
-
-    env: # ✅ Set environment variables here
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      RELEASE_CHANNEL: production
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -21,10 +17,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2 # 👈 This loads your .env values into env vars
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Ensure using Node.js 20+
+          node-version: 20
 
       - name: Install dependencies
         run: npm install --save-dev semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/commit-analyzer @semantic-release/release-notes-generator conventional-changelog-conventionalcommits
@@ -33,4 +32,7 @@ jobs:
         run: echo "RELEASE_CHANNEL is $RELEASE_CHANNEL"
 
       - name: Run Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_CHANNEL: ${{ env.RELEASE_CHANNEL }} # 👈 Pass it explicitly
         run: npx semantic-release
