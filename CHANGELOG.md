@@ -1,3 +1,15 @@
+## [1.2.0](https://github.com/MARK2273/test-version/compare/v1.1.1...v1.2.0) (2025-04-07)
+
+### Features
+
+* test ([7978379](https://github.com/MARK2273/test-version/commit/7978379ad0b18dfa737c016b4e784c6f8b5a0084))
+
+## [1.1.1](https://github.com/MARK2273/test-version/compare/v1.1.0...v1.1.1) (2025-04-07)
+
+### Bug Fixes
+
+* test purpose ([cae9212](https://github.com/MARK2273/test-version/commit/cae92124c569d396426a439b384715552923d3cc))
+
 ## [1.1.0](https://github.com/MARK2273/test-version/compare/v1.0.3...v1.1.0) (2025-04-07)
 
 ### Features
